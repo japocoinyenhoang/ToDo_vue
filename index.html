@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="app.css">
-  <title>ToDo</title>
-</head>
-<body>
-  <main id="app">
-    <h1> {{title}}</h1>
-    <form @submit.prevent="addTodo">
-      <label for="newTodo">New Todo</label>
-      <input v-model="newTodo" type="text" name="newTodo" id="newTodo" value ="">
-      <button type="submit" name="button">ADD</button>
-      <ul>
-        <li v-for="todo in todos">
-          <input type="checkbox" name="" id="" v-model="todo.done">
-          <span :class="{done: todo.done}">{{todo.title}}</span>
-        </li>
-      </ul>
-    </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+    <title>ToDo</title>
+  </head>
+  <body>
+    <main id="app">
+      <h1>{{title}}</h1>
+      <form @submit.prevent="addTodo">
+        <label for="newTodo">New Todo</label>
+        <input
+          v-model="newTodo"
+          type="text"
+          name="newTodo"
+          id="newTodo"
+          value=""
+        />
+        <button type="submit" name="button">ADD</button>
+        <ul>
+          <li v-for="todo in todos">
+            <input type="checkbox" name="" id="" v-model="todo.done" />
+            <span :class="{done: todo.done}">{{todo.title}}</span>
+            <button type="button" @click="removeTodo(todo)">REMOVE</button>
+          </li>
+        </ul>
+      </form>
+    </main>
 
-  </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-  <script src="app.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
