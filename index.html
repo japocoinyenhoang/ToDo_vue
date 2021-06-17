@@ -20,14 +20,16 @@
           value=""
         />
         <button type="submit" name="button">ADD</button>
-        <ul>
-          <li v-for="todo in todos">
-            <input type="checkbox" name="" id="" v-model="todo.done" />
-            <span :class="{done: todo.done}">{{todo.title}}</span>
-            <button type="button" @click="removeTodo(todo)">REMOVE</button>
-          </li>
-        </ul>
       </form>
+      <button @click="allDone" type="button" name="button">All Done</button>
+      <button @click="allUnDone" type="button" name="button">All UnDone</button>
+      <ul>
+        <li v-for="todo in todos">
+          <input type="checkbox" name="" id="" v-model="todo.done" />
+          <span :class="{done: todo.done}">{{todo.title}}</span>
+          <button type="button" @click="removeTodo(todo)">REMOVE</button>
+        </li>
+      </ul>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
