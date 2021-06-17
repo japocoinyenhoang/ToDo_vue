@@ -2,30 +2,30 @@ const app = new Vue({
   el: "#app",
   data: {
     title: "To Do App",
-    newTodo: "",
-    todos: [],
+    task: "",
+    tasks: [],
   },
   methods: {
-    addTodo() {
+    addTask() {
       console.log("form submitted");
-      this.todos.push({
-        title: this.newTodo,
+      this.tasks.push({
+        title: this.task,
         done: false,
       });
-      this.newTodo = "";
+      this.task = "";
     },
-    removeTodo(todo) {
-      const todoIndex = this.todos.indexOf(todo);
-      this.todos.splice(todoIndex, 1);
+    removeTodo(task) {
+      const taskIndex = this.tasks.indexOf(task);
+      this.tasks.splice(taskIndex, 1);
     },
     allDone() {
-      this.todos.forEach((todo) => {
-        todo.done = true;
+      this.tasks.forEach((task) => {
+        task.done = true;
       });
     },
     allUnDone() {
-      this.todos.forEach((todo) => {
-        todo.done = false;
+      this.tasks.forEach((task) => {
+        task.done = false;
       });
     },
   },

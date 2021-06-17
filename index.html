@@ -10,24 +10,24 @@
   <body>
     <main id="app">
       <h1>{{title}}</h1>
-      <form @submit.prevent="addTodo">
-        <label for="newTodo">New Todo</label>
+      <form >
+        <label for="task">New Task</label>
         <input
-          v-model="newTodo"
+          v-model="task"
           type="text"
-          name="newTodo"
-          id="newTodo"
+          name="task"
           value=""
+          placeholder="Enter a new Task"
         />
-        <button type="submit" name="button">ADD</button>
+        <button type="submit" name="button" @click.prevent="addTask">ADD</button>
       </form>
       <button @click="allDone" type="button" name="button">All Done</button>
       <button @click="allUnDone" type="button" name="button">All UnDone</button>
       <ul>
-        <li v-for="todo in todos">
-          <input type="checkbox" name="" id="" v-model="todo.done" />
-          <span :class="{done: todo.done}">{{todo.title}}</span>
-          <button type="button" @click="removeTodo(todo)">REMOVE</button>
+        <li v-for="task in tasks">
+          <input type="checkbox" name="" id="" v-model="task.done" />
+          <span :class="{done: task.done}">{{task.title}}</span>
+          <button type="button" @click="removeTodo(task)">REMOVE</button>
         </li>
       </ul>
     </main>
