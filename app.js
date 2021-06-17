@@ -9,7 +9,10 @@ const app = new Vue ({
   methods: {
     addTodo() {
       console.log('form submitted');
-      this.todos.push(this.newTodo);
+      this.todos.push({
+        title: this.newTodo, 
+        done: false
+      });
       this.newTodo=''
     }
   }
