@@ -1,7 +1,78 @@
-
-li{
-  list-style: none;
+/* -- Common -- */
+body {
+  height: 100vh;
+  margin: 0 20%;
+  text-align: center;
 }
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  padding: 10px 60px;
+  background-color: rgb(241, 248, 234);
+}
+
+/* -- ADD TODO task -- */
+.add__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add__input {
+  flex-grow: 1;
+  height: 30px;
+  padding-left: 10px;
+  border-style: none;
+  border-bottom: 1px solid black;
+}
+
+/* --buttons format --*/
+.btn-section__container {
+  display: flex;
+  align-items: baseline;
+}
+
+.btn-section__text {
+  width: 100px;
+  text-align: start;
+}
+
+.btn,
+.add__btn {
+  width: 80px;
+  height: 30px;
+  margin: 5px 3px;
+}
+
+.btn {
+  background-color: cadetblue;
+  border-color: cyan;
+  border-radius: 5px;
+  color: white;
+}
+
+.add__btn,
+.task__btn {
+  background-color: aquamarine;
+  padding: 10px 5px;
+  margin: 0 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.task__container {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
 .done {
   text-decoration: line-through;
 }

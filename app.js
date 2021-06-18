@@ -32,6 +32,14 @@ const app = new Vue({
       this.tasks.splice(index, 1);
     },
 
+    sortUndone () {
+      this.tasks.sort((a,b) => a.done > b.done ? 1 : -1);
+    },
+
+    sortDone () {
+      this.tasks.sort((a,b) => a.done < b.done ? 1 : -1);
+    },
+
     allDone() {
       this.tasks.forEach((task) => {
         task.done = true;
@@ -48,5 +56,5 @@ const app = new Vue({
       this.task = this.tasks[index].name;
       this.editedTask = index;
     },
-  },
+  }
 });
