@@ -11,32 +11,56 @@
   <body>
     <main id="app" :class="'wrapper'">
       <h1>{{title}}</h1>
-      <form :class="'add__container'" >
-        <input v-model="task" type="text" :class="'add__input'" placeholder="Enter a new Task" />
-        <button type="submit" name="button" @click.prevent="addTask" :class="'add__btn'">
+      <form :class="'add__container'">
+        <input
+          v-model="task"
+          type="text"
+          :class="'add__input'"
+          placeholder="Enter a new Task"
+        />
+        <button
+          type="submit"
+          name="button"
+          @click.prevent="addTask"
+          :class="'add__btn'"
+        >
           ADD
         </button>
       </form>
-      
+
       <div :class="'btn-section__container'">
         <p :class="'btn-section__text'">Set All:</p>
-        <button @click="allDone" type="button" name="button" :class="'btn'">Done</button>
-        <button @click="allUnDone" type="button" name="button" :class="'btn'">Undone</button>
+        <button @click="allDone" type="button" name="button" :class="'btn'">
+          Done
+        </button>
+        <button @click="allUnDone" type="button" name="button" :class="'btn'">
+          Undone
+        </button>
       </div>
       <div :class="'btn-section__container'">
         <p :class="'btn-section__text'">Sort by:</p>
-        <button @click="sortDone" type="button" name="button" :class="'btn'">Done</button>
-        <button @click="sortUndone" type="button" name="button" :class="'btn'">Undone</button>
+        <button @click="sortDone" type="button" name="button" :class="'btn'">
+          Done
+        </button>
+        <button @click="sortUndone" type="button" name="button" :class="'btn'">
+          Undone
+        </button>
       </div>
 
       <ul :class="'tasks__container'">
-        <li v-for="(task, index) in tasks" :key="index" :class="'task__container'">
+        <li
+          v-for="(task, index) in tasks"
+          :key="index"
+          :class="'task__container'"
+        >
           <div :class="'task-item'">
             <input type="checkbox" v-model="task.done" />
             <span :class="{'done': task.done}">{{task.name}}</span>
           </div>
-           <div :class="'task-btn__container'">
-            <button @click="removeTask(index)" :class="'task__btn'">REMOVE</button>
+          <div :class="'task-btn__container'">
+            <button @click="removeTask(index)" :class="'task__btn'">
+              REMOVE
+            </button>
             <button @click="editTask(index)" :class="'task__btn'">EDIT</button>
           </div>
         </li>
