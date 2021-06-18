@@ -1,7 +1,7 @@
 /* -- Common -- */
 body {
   height: 100vh;
-  margin: 0 20%;
+  margin: 0 30%;
   text-align: center;
 }
 
@@ -65,6 +65,10 @@ li {
   margin: 0 5px;
   border-radius: 5px;
   border: none;
+}
+
+.tasks__container {
+  margin-top: 30px;
 }
 
 .task__container {

@@ -29,7 +29,7 @@
         <button @click="sortUndone" type="button" name="button" :class="'btn'">Undone</button>
       </div>
 
-      <ul>
+      <ul :class="'tasks__container'">
         <li v-for="(task, index) in tasks" :key="index" :class="'task__container'">
           <div :class="'task-item'">
             <input type="checkbox" v-model="task.done" />
